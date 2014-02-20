@@ -53,7 +53,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	
 	**Note:** You could use IDLE 3 for this program but just make sure that in step 5 you use python 3 syntax for getting user input.  
 	
-	![alt text](https://idle.png "Idle desktop icon")
+	![alt text](idle.png "Idle desktop icon")
 
 2. Create a new test editor file by clicking on *File* and *New Window*
 
@@ -65,11 +65,13 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	import RPi.GPIO as GPIO
 	import time
 	```
+
 5. 	Make sure the GPIO pins are ready zion
 
 	```python
 	GPIO.setmode(GPIO.BOARD)
 	```
+
 6. 	As you are outputting to an LED you need to set up the pin that that the LED connects to on the Raspberry Pi as an output. First by using a variable to name the pin and then by setting the output:
 
 	```python
@@ -83,6 +85,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	GPIO.output(led, 1)
 	```
 8. Now add a line to wait 5 seconds by typing:
+
 	```python
 	time.sleep(5)
 	```
@@ -113,6 +116,7 @@ The object of the game is to see who can press the button first when the light g
 	```python
 	import random
 	``` 
+	
 3. Then locate the line `time.sleep(5)` and amend it so that it reads:
 
 	```python
@@ -132,10 +136,12 @@ As with the last step, some code needs to be added to your current program.
 **Activity Checklist:**
 
 1. With the file **reaction.py** open add the following variables underneath `led = 23`
+
 	```python
 	rightButton = 3
 	leftButton = 5
 	```
+	
 2. Next set the buttons as input in the same way that you set the LED as output. Underneath `GPIO.setup(led, GPIO.OUT)` type:
 	```python
 	GPIO.setup(rightButton, GPIO.IN)
@@ -152,9 +158,9 @@ As with the last step, some code needs to be added to your current program.
     	print "Right button pressed"	
 	```	
 
-	Each time around this loop the Raspberry Pi checks if a button has been pushed and if one 	has then a statement is printed to the screen to indicate that it has been pushed.
+	Each time around this loop the Raspberry Pi checks if a button has been pushed and if one has then a statement is 	printed to the screen to indicate that it has been pushed.
 
-	Notice that the line after `while` is **indented** (it has paces at the start). Python 	knows which lines are in the loop (and also for the `if` blocks) by how far they are 	indented, so make sure you put the spaces in correctly. The IDLE text editor should do 	much of this for you, but make sure you check it.
+	Notice that the line after `while` is **indented** (it has paces at the start). Python 	knows which lines are in 		the loop (and also for the `if` blocks) by how far they are 	indented, so make sure you put the spaces in 	correctly. The IDLE text editor should do 	much of this for you, but make sure you check it.
 
 4. Save your program and test it with a friend.
 
@@ -165,11 +171,14 @@ Wouldn't it be better if the program told you who has won instead of just which 
 **Activity Checklist:**
 
 1. To find out the names of the players you can use `raw_input` to ask the players to type in their names. Underneath the imported libraries and modules type:
+
 	```python
 	leftName = raw_input("What is the left player's name? ")
 	rightName = raw_input("What is the right player's name? ")
 	```
+	
 2. Next type the following code to put the inputted names into a list:	
+
 	```python
 	names = [ leftName, rightName ]
 	```
@@ -178,14 +187,16 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 	```python
 	if GPIO.input(leftButton) == False:
-    print names[0] + " won"
-    ```
+    	print names[0] + " won"
+    	```
+    	
 4. Repeat the last step replacing `print "Right button pressed"` with `print names[1] + " won"`
 
 	```python
 	if GPIO.input(rightButton) == False:
     	print names[1] + " won"	
     	```
+    	
 5. Save **reaction.py** and test your game to see if it works by clicking on *Run* then *Run module*
 
 ##Things to try:
