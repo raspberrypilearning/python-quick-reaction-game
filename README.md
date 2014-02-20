@@ -53,7 +53,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	
 	**Note:** You could use IDLE 3 for this program but just make sure that in step 5 you use python 3 syntax for getting user input.  
 	
-	[!alt text](https://idle.png "Idle desktop icon")
+	![alt text](https://idle.png "Idle desktop icon")
 
 2. Create a new test editor file by clicking on *File* and *New Window*
 
@@ -65,36 +65,77 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	import RPi.GPIO as GPIO
 	import time
 	```
-5. 	Make sure the GPIO pins are ready zion	```python
+5. 	Make sure the GPIO pins are ready zion
+
+	```python
 	GPIO.setmode(GPIO.BOARD)
 	```
-6. 	As you are outputting to an LED you need to set up the pin that that the LED connects to on the Raspberry Pi as an output. First by using a variable to name the pin and then by setting the output:	```python
+6. 	As you are outputting to an LED you need to set up the pin that that the LED connects to on the Raspberry Pi as an output. First by using a variable to name the pin and then by setting the output:
+
+	```python
 	led = 23
-		GPIO.setup(led, GPIO.OUT)	```7. Next add a line to turn the LED on. The value `1` represents **on** and the value `0` represents **off**	```python	GPIO.output(led, 1)	```8. Now add a line to wait 5 seconds by typing:	```python
+	
+	GPIO.setup(led, GPIO.OUT)
+	```
+7. Next add a line to turn the LED on. The value `1` represents **on** and the value `0` represents **off**
+
+	```python
+	GPIO.output(led, 1)
+	```
+8. Now add a line to wait 5 seconds by typing:
+	```python
 	time.sleep(5)
 	```
-	9. Then add a line to turn the LED off like this:	```python	GPIO.output(led, 0)	```
-10. Add the end of your program add `GPIO.cleanup()`. Using GPIO cleanup and exiting a program normally will clean up all the ports that you have used, ready to be used again. 	
-11. Save the file by clicking on *File* and *Save* and test that it works by clicking on *Run* and then *Run Module*.
-If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging*. Finding errors or bugs in your code and fixing them.
-## Step 3: Adding an Element of Surprise
-The object of the game is to see who can press the button first when the light goes out so it would be better if the length of time it stayed on for were random. You need to add and amend some lines of code in your Python program so far.
-**Activity Checklist:**
-1. If the file **reaction.py** is not already open in IDLE then open it by clicking on *File* and *Open*.
-2. Underneath **import time** add the following line:
-	```python
-	import random
-	``` 3. Then locate the line `time.sleep(5)` and amend it so that it reads:
-	```python	time.sleep(random.uniform(5, 10))	```
-4. Save your work by clicking on *file* and *save*. Test that it works by clicking on *Run* and then *Run Module*	## Step 4: Detecting the Buttons
+	
+9. Then add a line to turn the LED off like this:
 
-The LED is working, now you want to add functionality to your program so that when a button is pressed it is detected. That way you can record the scores of the players to see who wins. The way do this is to have a loop that keeps going until one of the buttons is pressed.One odd thing is that the buttons are on if they are not pressed and off when they are. This is why the code says 'Left button pressed' when it finds that 'leftButton' is 'False'.
-As with the last step, some code needs to be added to your current program.
-**Activity Checklist:**
-1. With the file **reaction.py** open add the following variables underneath `led = 23`
+	```python
+	GPIO.output(led, 0)
+	```
+
+10. Add the end of your program add `GPIO.cleanup()`. Using GPIO cleanup and exiting a program normally will clean up all the ports that you have used, ready to be used again. 	
+
+11. Save the file by clicking on *File* and *Save* and test that it works by clicking on *Run* and then *Run Module*.
+
+If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging*. Finding errors or bugs in your code and fixing them.
+
+
+## Step 3: Adding an Element of Surprise
+
+The object of the game is to see who can press the button first when the light goes out so it would be better if the length of time it stayed on for were random. You need to add and amend some lines of code in your Python program so far.
+
+**Activity Checklist:**
+
+1. If the file **reaction.py** is not already open in IDLE then open it by clicking on *File* and *Open*.
+
+2. Underneath **import time** add the following line:
+
+	```python
+	import random
+	``` 
+3. Then locate the line `time.sleep(5)` and amend it so that it reads:
+
+	```python
+	time.sleep(random.uniform(5, 10))
+	```
+
+4. Save your work by clicking on *file* and *save*. Test that it works by clicking on *Run* and then *Run Module*	
+
+
+## Step 4: Detecting the Buttons
+
+The LED is working, now you want to add functionality to your program so that when a button is pressed it is detected. That way you can record the scores of the players to see who wins. The way do this is to have a loop that keeps going until one of the buttons is pressed.
+One odd thing is that the buttons are on if they are not pressed and off when they are. This is why the code says 'Left button pressed' when it finds that 'leftButton' is 'False'.
+
+As with the last step, some code needs to be added to your current program.
+
+**Activity Checklist:**
+
+1. With the file **reaction.py** open add the following variables underneath `led = 23`
 	```python
 	rightButton = 3
-	leftButton = 5	```
+	leftButton = 5
+	```
 2. Next set the buttons as input in the same way that you set the LED as output. Underneath `GPIO.setup(led, GPIO.OUT)` type:
 	```python
 	GPIO.setup(rightButton, GPIO.IN)
@@ -102,7 +143,14 @@ The LED is working, now you want to add functionality to your program so that wh
 	```
 3. Then underneath `GPIO.output(led, 0)` add the button loop that waits until a button has been pressed:
 
-	``` python	while GPIO.input(leftButton) and GPIO.input(rightButton):    	pass	if GPIO.input(leftButton) == False:    	print "Left button pressed"	if GPIO.input(rightButton) == False:    	print "Right button pressed"		```	
+	``` python
+	while GPIO.input(leftButton) and GPIO.input(rightButton):
+    	pass
+	if GPIO.input(leftButton) == False:
+    	print "Left button pressed"
+	if GPIO.input(rightButton) == False:
+    	print "Right button pressed"	
+	```	
 
 	Each time around this loop the Raspberry Pi checks if a button has been pushed and if one 	has then a statement is printed to the screen to indicate that it has been pushed.
 
@@ -111,19 +159,35 @@ The LED is working, now you want to add functionality to your program so that wh
 4. Save your program and test it with a friend.
 
 ## Step 5: Get Player Names
-Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players names. In python you can use input. In Python 2 use the syntax `raw_input` (which you have been using so far) You could write your code in Python 3 which means that you need to use `input` instead.
+
+Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players names. In python you can use input. In Python 2 use the syntax `raw_input` (which you have been using so far) You could write your code in Python 3 which means that you need to use `input` instead.
 
 **Activity Checklist:**
 
 1. To find out the names of the players you can use `raw_input` to ask the players to type in their names. Underneath the imported libraries and modules type:
-	```python	leftName = raw_input("What is the left player's name? ")	rightName = raw_input("What is the right player's name? ")
+	```python
+	leftName = raw_input("What is the left player's name? ")
+	rightName = raw_input("What is the right player's name? ")
 	```
-2. Next type the following code to put the inputted names into a list:		```python	names = [ leftName, rightName ]	```
-3. Then go down to the button loop and replace `print "Left button pressed"` with `print names[0] + " won"` like this:
-	```python	if GPIO.input(leftButton) == False:    print names[0] + " won"    ```
+2. Next type the following code to put the inputted names into a list:	
+	```python
+	names = [ leftName, rightName ]
+	```
+
+3. Then go down to the button loop and replace `print "Left button pressed"` with `print names[0] + " won"` like this:
+
+	```python
+	if GPIO.input(leftButton) == False:
+    print names[0] + " won"
+    ```
 4. Repeat the last step replacing `print "Right button pressed"` with `print names[1] + " won"`
 
 	```python
-	if GPIO.input(rightButton) == False:    print names[1] + “ won”	    ```5. Save **reaction.py** and test your game to see if it works by clicking on *Run* then *Run module*
-##Things to try:
-- Add scores for both players that accumilate over a number of rounds.
+	if GPIO.input(rightButton) == False:
+    	print names[1] + " won"	
+    	```
+5. Save **reaction.py** and test your game to see if it works by clicking on *Run* then *Run module*
+
+##Things to try:
+
+- Add scores for both players that accumilate over a number of rounds.
