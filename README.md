@@ -170,34 +170,34 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 **Activity Checklist:**
 
-1. To find out the names of the players you can use `raw_input` to ask the players to type in their names. Underneath the imported libraries and modules type:
+1. 	To find out the names of the players you can use `raw_input` to ask the players to type in their names. Underneath 	the imported libraries and modules type:
 
 	```python
 	leftName = raw_input("What is the left player's name? ")
 	rightName = raw_input("What is the right player's name? ")
 	```
 	
-2. Next type the following code to put the inputted names into a list:	
+2. 	Next type the following code to put the inputted names into a list:	
 
 	```python
 	names = [ leftName, rightName ]
 	```
 
-3. Then go down to the button loop and replace `print "Left button pressed"` with `print names[0] + " won"` like this:
+3. 	Then go down to the button loop and replace `print "Left button pressed"` with `print names[0] + " won"` like 			this:
 
 	```python
 	if GPIO.input(leftButton) == False:
-    	print names[0] + " won"
-    	```
+	  print names[0] + " won"
+	```
     	
-4. Repeat the last step replacing `print "Right button pressed"` with `print names[1] + " won"`
+4. 	Repeat the last step replacing `print "Right button pressed"` with `print names[1] + " won"`
 
 	```python
 	if GPIO.input(rightButton) == False:
-    	print names[1] + " won"	
-    	```
+	  print names[1] + " won"	
+	```
     	
-5. Save **reaction.py** and test your game to see if it works by clicking on *Run* then *Run module*
+5. 	Save **reaction.py** and test your game to see if it works by clicking on *Run* then *Run module*
 
 ##Things to try:
 
