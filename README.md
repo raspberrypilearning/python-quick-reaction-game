@@ -199,6 +199,8 @@ Wouldn't it be better if the program told you who has won instead of just which 
     	
 5. 	Save **reaction.py** and test your game to see if it works.
 
+![](reaction-game3.png)
+
 ##Things to try:
 
 - Add scores for both players that accumilate over a number of rounds.
