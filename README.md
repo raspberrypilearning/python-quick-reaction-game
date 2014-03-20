@@ -164,15 +164,15 @@ As with the last step, some code needs to be added to your current program.
 
 ## Step 5: Get Player Names
 
-Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players names. In python you can use input. In Python 2 use the syntax `raw_input` (which you have been using so far) You could write your code in Python 3 which means that you need to use `input` instead.
+Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players names. In python you can use input. In Python 3 use the syntax `input` (which you have been using so far) You could write your code in Python 2 which means that you need to use `raw_input` instead.
 
 **Activity Checklist:**
 
 1. 	To find out the names of the players you can use `input` to ask the players to type in their names. Underneath 	the imported libraries and modules type:
 
 	```python
-	left_name = input('What is the left player's name? ')
-	right_name = input('What is the right player's name? ')
+	left_name = input('left players name is ')
+	right_name = input('right players name is ')
 	```
 	
 2. 	Next type the following code to put the inputted names into a list:	
