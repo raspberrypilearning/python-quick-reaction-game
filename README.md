@@ -138,23 +138,23 @@ As with the last step, some code needs to be added to your current program.
 1. With the file **reaction.py** open add the following variables underneath `led = 23`
 
 	```python
-	rightButton = 3
-	leftButton = 5
+	right_button = 3
+	left_button = 5
 	```
 	
 2. Next set the buttons as input in the same way that you set the LED as output. Underneath `GPIO.setup(led, GPIO.OUT)` type:
 	```python
-	GPIO.setup(rightButton, GPIO.IN)
-	GPIO.setup(leftButton, GPIO.IN)
+	GPIO.setup(right_button, GPIO.IN)
+	GPIO.setup(left_button, GPIO.IN)
 	```
 3. Then underneath `GPIO.output(led, 0)` add the button loop that waits until a button has been pressed:
 
 	``` python
-	while GPIO.input(leftButton) and GPIO.input(rightButton):
+	while GPIO.input(left_button) and GPIO.input(right_button):
     	pass
-	if GPIO.input(leftButton) == False:
+	if GPIO.input(left_button) == False:
     	print "Left button pressed"
-	if GPIO.input(rightButton) == False:
+	if GPIO.input(right_button) == False:
     	print "Right button pressed"	
 	```	
 
