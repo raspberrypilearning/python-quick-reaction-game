@@ -30,18 +30,30 @@ You will need to set up your Raspberry Pi to take part in this activity. [See th
 
 ## Step 1: Connect the Components
 
-Before using Python the program the game, you will need to connect the electronic components on a **breadboard** that has lots of holes in it allowing you to connect electrical bits together really easily.
+Before using Python the program the game, you will need to connect the electronic components on a **breadboard** that has lots of holes in it allowing you to connect electrical bits together really easily. To help know which pins to connect cables to it is recommended that you download and print a [Raspberry Leaf](https://github.com/simonmonk/wiki_images/raw/master/raspberry%20leaf%20r2.pdf) diagram and place it over the pinson your Raspberry Pi. 
 
 **Activity Checklist:**
 
 1. Begin by placing all the components on a desk and make sure that you have space to work. Lay the breadboard lenthways (landscape).
 
-2. Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row 'a' and one set of legs on row 'c'.
+2. Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row `A` and one set of legs on row `C`.
 
 3. Repeat the last step with the second button only placing it at the other end of the breabdoard on the same row. See the diagram below.
 
-4. Place an LED with the longer leg in.. 
+4. Place an LED with the longer leg above the ridge in the breadboard in `H16` and the shorter leg in `G15` (the numbering will depend on your breadboard so make sure that you check the diagram below).
 
+5. Next push one leg of the resistor into the same coloumn `15` as the short leg of the resistor and the other leg into a hole along the blue strip.
+
+6. Time to add the jumper wires. Start by taking two male to male jumper wires and placing one side in a hole next to the outside leg of the lft hand button, and the other leg in a hole along the blue strip. Repeat this step with the right hand button.
+
+7. Then with a male to female jumper wire, connect **GPIO 2** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO 3**.
+
+8. Using another male to female jumper wire, connect **GPIO 11** to a hole on the breadboard in line with the long leg of the LED. 
+
+9. Finally with the remaining male to female jumper wire, connect a **GND** GPIO pin to the blue strip on the breadboard.
+
+	![](quick-reaction-circuit.png)
+	
 
 ## Step 2: Controlling the Light
 
