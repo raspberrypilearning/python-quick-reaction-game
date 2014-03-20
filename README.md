@@ -185,14 +185,14 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 	```python
 	if GPIO.input(left_button) == False:
-	  print names[0] + " won"
+	  print(names [0] + " won")
 	```
     	
 4. 	Repeat the last step replacing `print "Right button pressed"` with `print names[1] + " won"`
 
 	```python
 	if GPIO.input(right_button) == False:
-	  print names[1] + " won"	
+	  print(names [1] + " won")	
 	```
     	
 5. 	Save **reaction.py** and test your game to see if it works by clicking on *Run* then *Run module*
