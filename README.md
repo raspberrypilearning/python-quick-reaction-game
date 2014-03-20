@@ -49,11 +49,9 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 **Activity Checklist**
 
-1. Open the Python programming enevironment **IDLE** by double clicking the desktop icon, or by using the main menu, selecting *Programming* and then *IDLE*. 
+1. Open the Python programming enevironment **IDLE3** by double clicking the desktop icon, or by using the main menu, selecting *Programming* and then *IDLE3*. 
 	
-	**Note:** You could use IDLE 3 for this program but just make sure that in step 5 you use python 3 syntax for getting user input.  
-	
-	![alt text](idle.png "Idle desktop icon")
+	![](idle3.png "Idle desktop icon")
 
 2. Create a new test editor file by clicking on *File* and *New Window*
 
@@ -153,9 +151,9 @@ As with the last step, some code needs to be added to your current program.
 	while GPIO.input(left_button) and GPIO.input(right_button):
     	pass
 	if GPIO.input(left_button) == False:
-    	print "Left button pressed"
+    	print("Left button pressed")
 	if GPIO.input(right_button) == False:
-    	print "Right button pressed"	
+    	print("Right button pressed")	
 	```	
 
 	Each time around this loop the Raspberry Pi checks if a button has been pushed and if one has then a statement is 	printed to the screen to indicate that it has been pushed.
@@ -170,30 +168,30 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 **Activity Checklist:**
 
-1. 	To find out the names of the players you can use `raw_input` to ask the players to type in their names. Underneath 	the imported libraries and modules type:
+1. 	To find out the names of the players you can use `input` to ask the players to type in their names. Underneath 	the imported libraries and modules type:
 
 	```python
-	leftName = raw_input("What is the left player's name? ")
-	rightName = raw_input("What is the right player's name? ")
+	left_name = input('What is the left player's name? ')
+	right_name = input('What is the right player's name? ')
 	```
 	
 2. 	Next type the following code to put the inputted names into a list:	
 
 	```python
-	names = [ leftName, rightName ]
+	names = [ left_name, right_name ]
 	```
 
-3. 	Then go down to the button loop and replace `print "Left button pressed"` with `print names[0] + " won"` like 			this:
+3. 	Then go down to the button loop and replace `print("Left button pressed")` with `print names[0] + " won"` like 			this:
 
 	```python
-	if GPIO.input(leftButton) == False:
+	if GPIO.input(left_button) == False:
 	  print names[0] + " won"
 	```
     	
 4. 	Repeat the last step replacing `print "Right button pressed"` with `print names[1] + " won"`
 
 	```python
-	if GPIO.input(rightButton) == False:
+	if GPIO.input(right_button) == False:
 	  print names[1] + " won"	
 	```
     	
