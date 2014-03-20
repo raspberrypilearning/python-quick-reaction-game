@@ -96,7 +96,9 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 10. Add the end of your program add `GPIO.cleanup()`. Using GPIO cleanup and exiting a program normally will clean up all the ports that you have used, ready to be used again. 	
 
-11. Save the file by clicking on *File* and *Save* and test that it works by clicking on *Run* and then *Run Module*.
+11. Save the file by clicking on *File* and *Save*.
+
+12. Finally test that it works by opening **LXTerminal** by double clicking the icon on the desktop. Then type `sudo python3 reaction.py`
 
 If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging*. Finding errors or bugs in your code and fixing them.
 
@@ -107,7 +109,7 @@ The object of the game is to see who can press the button first when the light g
 
 **Activity Checklist:**
 
-1. If the file **reaction.py** is not already open in IDLE then open it by clicking on *File* and *Open*.
+1. If the file **reaction.py** is not already open in IDLE3 then open it by clicking on *File* and *Open*.
 
 2. Underneath **import time** add the following line:
 
@@ -121,7 +123,7 @@ The object of the game is to see who can press the button first when the light g
 	time.sleep(random.uniform(5, 10))
 	```
 
-4. Save your work by clicking on *file* and *save*. Test that it works by clicking on *Run* and then *Run Module*	
+4. Save your work by clicking on *file* and *save*. Test that it works bin an LXTerminal window by typing `sudo python3 reaction.py`
 
 
 ## Step 4: Detecting the Buttons
@@ -156,23 +158,23 @@ As with the last step, some code needs to be added to your current program.
     	print("Right button pressed")	
 	```	
 
-	Each time around this loop the Raspberry Pi checks if a button has been pushed and if one has then a statement is 	printed to the screen to indicate that it has been pushed.
+	Each time around this loop the Raspberry Pi checks if a button has been pushed and if one has then a statement is printed to the screen to indicate that it has been pushed.
 
-	Notice that the line after `while` is **indented** (it has paces at the start). Python 	knows which lines are in 		the loop (and also for the `if` blocks) by how far they are 	indented, so make sure you put the spaces in 	correctly. The IDLE text editor should do 	much of this for you, but make sure you check it.
+	Notice that the line after `while` is **indented** (it has paces at the start). Python 	knows which lines are in the loop (and also for the `if` blocks) by how far they are 	indented, so make sure you put the spaces in correctly. The IDLE3 text editor should do 	much of this for you, but make sure you check it.
 
 4. Save your program and test it with a friend.
 
 ## Step 5: Get Player Names
 
-Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players names. In python you can use input. In Python 3 use the syntax `input` (which you have been using so far) You could write your code in Python 2 which means that you need to use `raw_input` instead.
+Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players names. In python you can use **input**. In Python 3 use the syntax `input` (which you have been using so far) You could write your code in Python 2 which means that you need to use `raw_input` instead.
 
 **Activity Checklist:**
 
-1. 	To find out the names of the players you can use `input` to ask the players to type in their names. Underneath 	the imported libraries and modules type:
+1. 	To find out the names of the players you can use `input` to ask the players to type in their names. Underneath the imported libraries and modules type:
 
 	```python
-	left_name = input('left players name is ')
-	right_name = input('right players name is ')
+	left_name = input('left player name is ')
+	right_name = input('right player name is ')
 	```
 	
 2. 	Next type the following code to put the inputted names into a list:	
@@ -181,21 +183,21 @@ Wouldn't it be better if the program told you who has won instead of just which 
 	names = [ left_name, right_name ]
 	```
 
-3. 	Then go down to the button loop and replace `print("Left button pressed")` with `print names[0] + " won"` like 			this:
+3. 	Then go down to the button loop and replace `print("Left button pressed")` with `print(names [0] + " won")` like 			this:
 
 	```python
 	if GPIO.input(left_button) == False:
 	  print(names [0] + " won")
 	```
     	
-4. 	Repeat the last step replacing `print "Right button pressed"` with `print names[1] + " won"`
+4. 	Repeat the last step replacing `print "Right button pressed"` with `print(names [1] + " won")`
 
 	```python
 	if GPIO.input(right_button) == False:
 	  print(names [1] + " won")	
 	```
     	
-5. 	Save **reaction.py** and test your game to see if it works by clicking on *Run* then *Run module*
+5. 	Save **reaction.py** and test your game to see if it works.
 
 ##Things to try:
 
