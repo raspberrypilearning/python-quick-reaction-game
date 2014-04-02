@@ -1,10 +1,8 @@
 ## Python Quick Reaction Game
 
-
 **Introduction**
 
 This project gives you the opportunity to use electronics to create a quick reaction game that you will program using Python. If you have little or no experience of creating circuits do not worry, this guide will walk you through it and by the end you will have a fun game to play with your friends.
-
 
 **Requirements**
 
@@ -22,15 +20,9 @@ This guide assumes that you have the following:
 - Two male to male jumper wires
 - Two tactile buttons
 
-
-## Step 0: Set up your Raspberry Pi
-
-You will need to set up your Raspberry Pi to take part in this activity. [See the Raspberry Pi Quick Start Guide here](http://www.raspberrypi.org/quick-start-guide) to get you up and running.
-
-
 ## Step 1: Connect the Components
 
-Before using Python the program the game, you will need to connect the electronic components on a **breadboard** that has lots of holes in it allowing you to connect electrical bits together really easily. To help know which pins to connect cables to it is recommended that you download and print a [Raspberry Leaf](https://github.com/simonmonk/wiki_images/raw/master/raspberry%20leaf%20r2.pdf) diagram and place it over the pinson your Raspberry Pi. 
+Before using Python the program the game, you will need to connect the electronic components on a **breadboard** that has lots of holes in it allowing you to connect electrical bits together really easily. To help know which pins to connect cables to it is recommended that you download and print a [Raspberry Leaf](https://github.com/simonmonk/wiki_images/raw/master/raspberry%20leaf%20r2.pdf) diagram and place it over the pinson your Raspberry Pi.
 
 **Activity Checklist:**
 
@@ -48,12 +40,11 @@ Before using Python the program the game, you will need to connect the electroni
 
 7. Then with a male to female jumper wire, connect **GPIO 2** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO 3**.
 
-8. Using another male to female jumper wire, connect **GPIO 11** to a hole on the breadboard in line with the long leg of the LED. 
+8. Using another male to female jumper wire, connect **GPIO 11** to a hole on the breadboard in line with the long leg of the LED.
 
 9. Finally with the remaining male to female jumper wire, connect a **GND** GPIO pin to the blue strip on the breadboard.
 
 	![](quick-reaction-circuit.png)
-	
 
 ## Step 2: Controlling the Light
 
@@ -61,13 +52,13 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 **Activity Checklist**
 
-1. Open the Python programming enevironment **IDLE3** by double clicking the desktop icon, or by using the main menu, selecting *Programming* and then *IDLE3*. 
-	
+1. Open the Python programming enevironment **IDLE3** by double clicking the desktop icon, or by using the main menu, selecting *Programming* and then *IDLE3*.
+
 	![](idle3.png "Idle desktop icon")
 
 2. Create a new test editor file by clicking on *File* and *New Window*
 
-3. Save this file as **reaction.py** by clicking on *File* and *Save As* 
+3. Save this file as **reaction.py** by clicking on *File* and *Save As*
 
 4. First you will need to import the modules and libraries needed to control the GPIO pins on the Raspberry Pi. Type:
 
@@ -86,7 +77,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 	```python
 	led = 23
-	
+
 	GPIO.setup(led, GPIO.OUT)
 	```
 7. Next add a line to turn the LED on. The value `1` represents **on** and the value `0` represents **off**
@@ -99,14 +90,14 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	```python
 	time.sleep(5)
 	```
-	
+
 9. Then add a line to turn the LED off like this:
 
 	```python
 	GPIO.output(led, 0)
 	```
 
-10. Add the end of your program add `GPIO.cleanup()`. Using GPIO cleanup and exiting a program normally will clean up all the ports that you have used, ready to be used again. 	
+10. Add the end of your program add `GPIO.cleanup()`. Using GPIO cleanup and exiting a program normally will clean up all the ports that you have used, ready to be used again.
 
 11. Save the file by clicking on *File* and *Save*.
 
@@ -127,8 +118,8 @@ The object of the game is to see who can press the button first when the light g
 
 	```python
 	import random
-	``` 
-	
+	```
+
 3. Then locate the line `time.sleep(5)` and amend it so that it reads:
 
 	```python
@@ -153,7 +144,7 @@ As with the last step, some code needs to be added to your current program.
 	right_button = 3
 	left_button = 5
 	```
-	
+
 2. Next set the buttons as input in the same way that you set the LED as output. Underneath `GPIO.setup(led, GPIO.OUT)` type:
 	```python
 	GPIO.setup(right_button, GPIO.IN)
@@ -167,8 +158,8 @@ As with the last step, some code needs to be added to your current program.
 	if GPIO.input(left_button) == False:
     	print("Left button pressed")
 	if GPIO.input(right_button) == False:
-    	print("Right button pressed")	
-	```	
+    	print("Right button pressed")
+	```
 
 	Each time around this loop the Raspberry Pi checks if a button has been pushed and if one has then a statement is printed to the screen to indicate that it has been pushed.
 
@@ -188,8 +179,8 @@ Wouldn't it be better if the program told you who has won instead of just which 
 	left_name = input('left player name is ')
 	right_name = input('right player name is ')
 	```
-	
-2. 	Next type the following code to put the inputted names into a list:	
+
+2. 	Next type the following code to put the inputted names into a list:
 
 	```python
 	names = [ left_name, right_name ]
@@ -201,18 +192,28 @@ Wouldn't it be better if the program told you who has won instead of just which 
 	if GPIO.input(left_button) == False:
 	  print(names [0] + " won")
 	```
-    	
+
 4. 	Repeat the last step replacing `print "Right button pressed"` with `print(names [1] + " won")`
 
 	```python
 	if GPIO.input(right_button) == False:
-	  print(names [1] + " won")	
+	  print(names [1] + " won")
 	```
-    	
+
 5. 	Save **reaction.py** and test your game to see if it works.
 
 ![](reaction-game3.png)
 
-##Things to try:
+## Things to try:
 
 - Add scores for both players that accumilate over a number of rounds.
+
+## Licence
+
+Unless otherwise specified, everything in this repository is covered by the following licence:
+
+![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+
+***Quick Reaction Game*** by the [Raspberry Pi Foundation](http://raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+Based on a work at https://github.com/raspberrypilearning/quick-reaction-game
