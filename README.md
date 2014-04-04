@@ -208,6 +208,10 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 - Add scores for both players that accumilate over a number of rounds.
 
+## Community
+
+This activity is based on the work of [Joseph Haig at his Code Club](https://github.com/jrmhaig/rpi_projects)
+
 ## Licence
 
 Unless otherwise specified, everything in this repository is covered by the following licence:
