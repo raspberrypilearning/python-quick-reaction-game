@@ -4,15 +4,11 @@
 
 This project gives you the opportunity to use electronics to create a quick reaction game that you will program using Python. If you have little or no experience of creating circuits do not worry, this guide will walk you through it and by the end you will have a fun game to play with your friends.
 
-**Requirements**
+## Step 0: Setting up your Raspberry Pi
 
-This guide assumes that you have the following:
+You will need to set up your Raspberry Pi to take part in this activity. See the [Raspberry Pi Start Guide here](http://www.raspberrypi.org/help/quick-start-guide/) to get you up and running.
 
-- A Raspberry Pi
-- Connected to a monitor or TV
-- A keyboard and mouse
-- A speaker or headphones
-- An SD card with the latest version of Raspbian installed via NOOBS
+You will require the following components in order to create this game with your Raspberry Pi.
 - A half size breadboard
 - LED
 - A resistor
