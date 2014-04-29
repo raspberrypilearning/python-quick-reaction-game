@@ -63,7 +63,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	import time
 	```
 
-5. 	Make sure the GPIO pins are ready zion
+5. 	Make sure the GPIO pins are ready
 
 	```python
 	GPIO.setmode(GPIO.BOARD)
