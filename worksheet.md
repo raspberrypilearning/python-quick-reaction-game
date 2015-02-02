@@ -34,7 +34,7 @@ Before using Python to program the game, you will need to connect the electronic
 
 9. Finally, connect a **GND** GPIO pin to the blue strip on the breadboard with the remaining male-to-female jumper wire.
 
-	![](quick-reaction-circuit.png)
+	![](images/quick-reaction-circuit.png)
 
 ## Step 2: Controlling the light
 
@@ -44,7 +44,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 1. Open the Python programming environment **IDLE3** by double-clicking the desktop icon, or by using the main menu, selecting *Programming* and then *IDLE3*.
 
-	![](idle3.png "Idle desktop icon")
+	![](images/idle3.png "Idle desktop icon")
 
 2. Create a new test editor file by clicking on *File* and *New Window*.
 
@@ -197,7 +197,7 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 5. 	Save **reaction.py** and test your game to see if it works.
 
-![](reaction-game3.png)
+![](images/reaction-game3.png)
 
 ## Things to try:
 
