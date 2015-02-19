@@ -1,14 +1,4 @@
-## Step 0: Setting up your Raspberry Pi
 
-You will need to set up your Raspberry Pi to take part in this activity. See the [Raspberry Pi Start Guide here](http://www.raspberrypi.org/help/quick-start-guide/) to get you up and running.
-
-You will require the following components in order to create this game with your Raspberry Pi.
-- A half-size breadboard
-- LED
-- A resistor
-- Four female-to-male jumper wires
-- Two male-to-male jumper wires
-- Two tactile buttons
 
 ## Step 1: Connect the components
 
@@ -199,7 +189,7 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 ![](images/reaction-game3.png)
 
-## Things to try:
+## What's next?
 
 - Add scores for both players that accumulate over a number of rounds.
 
