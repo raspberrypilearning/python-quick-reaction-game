@@ -84,7 +84,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 1. 	Make sure the GPIO pins are ready:
 
 	```python
-	GPIO.setmode(GPIO.BOARD)
+	GPIO.setmode(GPIO.BCM)
 	```
 
 1. 	As you are outputting to an LED, you need to set up the pin that the LED connects to on the Raspberry Pi as an output. First use a variable to name the pin and then set the output:
