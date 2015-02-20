@@ -81,43 +81,43 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	import time
 	```
 
-5. 	Make sure the GPIO pins are ready:
+1. 	Make sure the GPIO pins are ready:
 
 	```python
 	GPIO.setmode(GPIO.BOARD)
 	```
 
-6. 	As you are outputting to an LED, you need to set up the pin that the LED connects to on the Raspberry Pi as an output. First use a variable to name the pin and then set the output:
+1. 	As you are outputting to an LED, you need to set up the pin that the LED connects to on the Raspberry Pi as an output. First use a variable to name the pin and then set the output:
 
 	```python
-	led = 23
+	led = 4
 
 	GPIO.setup(led, GPIO.OUT)
 	```
 	
-7. Next add a line to turn the LED on. The value `1` represents **on** and the value `0` represents **off**:
+1. Next add a line to turn the LED on. The value `1` represents **on** and the value `0` represents **off**:
 
 	```python
 	GPIO.output(led, 1)
 	```
 	
-8. Now add a line to wait 5 seconds by typing:
+1. Now add a line to wait 5 seconds by typing:
 
 	```python
 	time.sleep(5)
 	```
 
-9. Then add a line to turn the LED off like this:
+1. Then add a line to turn the LED off like this:
 
 	```python
 	GPIO.output(led, 0)
 	```
 
-10. At the end of your program add `GPIO.cleanup()`. Using GPIO cleanup and exiting a program normally will clean up all the ports that you have used, ready to be used again.
+1. At the end of your program add `GPIO.cleanup()`. Using GPIO cleanup and exiting a program normally will clean up all the ports that you have used, ready to be used again.
 
-11. Save the file by clicking on *File* and *Save*.
+1. Save the file by clicking on *File* and *Save*.
 
-12. Finally, test that it works by opening **LXTerminal** by clicking on **Main Menu**, **Accesories** and **Terminal** Then type `sudo python3 reaction.py`.
+1. Finally, test that it works by click on **Run** followed by **Run Module** or by pressing `F5` on the keyboard.
 
 If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging*, which is finding errors or bugs in your code and fixing them.
 
@@ -128,19 +128,19 @@ The object of the game is to see who can press the button first when the light g
 
 1. If the file **reaction.py** is not already open in IDLE3 then open it by clicking on *File* and *Open*.
 
-2. Underneath **import time** add the following line:
+1. Underneath **import time** add the following line:
 
 	```python
 	import random
 	```
 
-3. Then locate the line `time.sleep(5)` and amend it so that it reads:
+1. Then locate the line `time.sleep(5)` and amend it so that it reads:
 
 	```python
 	time.sleep(random.uniform(5, 10))
 	```
 
-4. Save your work by clicking on *File* and *Save*. Test that it works in an LXTerminal window by typing `sudo python3 reaction.py`.
+4. Save your work by clicking on *File* and *Save*. Test that it works by pressing `F5`.
 
 
 ## Step 4: Detecting the buttons
@@ -151,11 +151,11 @@ One odd thing is that the buttons are on if they are not pressed and off when th
 
 As with the last step, some code needs to be added to your current program.
 
-1. With the file **reaction.py** open add the following variables underneath `led = 23`:
+1. With the file **reaction.py** open add the following variables underneath `led = 4`:
 
 	```python
 	right_button = 3
-	left_button = 5
+	left_button = 2
 	```
 
 2. Next set the buttons as input in the same way that you set the LED as output. Underneath `GPIO.setup(led, GPIO.OUT)` type:
@@ -169,11 +169,11 @@ As with the last step, some code needs to be added to your current program.
 
 	``` python
 	while GPIO.input(left_button) and GPIO.input(right_button):
-    	pass
-	if GPIO.input(left_button) == False:
-    	print("Left button pressed")
-	if GPIO.input(right_button) == False:
-    	print("Right button pressed")
+    		pass
+		if GPIO.input(left_button) == False:
+    			print("Left button pressed")
+		if GPIO.input(right_button) == False:
+    			print("Right button pressed")
 	```
 
 	Each time around this loop the Raspberry Pi checks if a button has been pushed; if one has, then a statement is printed to the screen to indicate that it has been pushed.
