@@ -1,25 +1,62 @@
 
 ## Step 1: Connect the components
 
-Before using Python to program the game, you will need to connect the electronic components on a **breadboard** that has lots of holes in it, allowing you to connect electrical bits together really easily. To help know which pins to connect cables to, it is recommended that you download and print a [Raspberry Leaf](https://github.com/simonmonk/wiki_images/raw/master/raspberry%20leaf%20r2.pdf) diagram and place it over the pins on your Raspberry Pi.
+Before using Python to program the game, you will need to connect the electronic components on a **breadboard** that has lots of holes in it, allowing you to connect electrical bits together really easily.
 
 *Using a breadboard allows you to connect electronic components to each other without having to solder them together. They are often used to test a circuit design before creating a Printed Circuit Board (PCB). The holes on the breadboard are connected in a pattern. With most breadboads, the top row of holes are all connected together – marked with red dots.  And so are the second row of holes – marked with blue dots and we call this the ground rail.  The same goes for the two rows of holes at the bottom of the breadboard. In the middle, the columns of wires are connected together with a break in the middle.*
 
 1. Begin by placing all the components on a desk and make sure that you have space to work. Lay the breadboard lengthways (landscape).
 
-2. Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row `A` and one set of legs on row `C`.
+1. Looking at the following GPIO diagram, comapre it to your Raspberry Pi. 
 
-3. Repeat the last step with the second button, only placing it at the other end of the breadboard on the same row. See the diagram below.
+    *GPIO stands for **General Purpose Input Output**. It is a way in which the Raspberry Pi can control and monitor the outside world by being connected to electronic circuits.  The Pi is able to control LEDs, turning them on or off, or motors, or many other things.  It is also able to detect whether a switch has been pressed, or temperature, or light.*
 
-4. Place an LED with the longer leg above the ridge in the breadboard in `H16` and the shorter leg in `G15`. The numbering will depend on your breadboard so make sure that you check the diagram below.
+    You'll be using a single ground pin (marked `GND`) and several GPIO pins (marked `GPIO`):
 
-5. Next push one leg of the resistor into the same column `15` as the short leg of the resistor and the other leg into a hole along the blue strip.
+|            |            |
+|-----------:|:-----------|
+|    3V3     | 5V         |
+|  **GPIO2** | 5V         |
+|  **GPIO3** | GND        |
+|  **GPIO4** | **GPIO14** |
+|        GND | **GPIO15** |
+| **GPIO17** | **GPIO18** |
+| **GPIO27** | GND        |
+| **GPIO22** | **GPIO23** |
+|        3V3 | **GPIO24** |
+| **GPIO10** | GND        |
+|  **GPIO9** | **GPIO25** |
+| **GPIO11** | **GPIO8**  |
+|        GND | **GPIO7**  |
+|        DNC | DNC        |
+|  **GPIO5** | GND        |
+|  **GPIO6** | **GPIO12** |
+| **GPIO13** | GND        |
+| **GPIO19** | **GPIO16** |
+| **GPIO26** | **GPIO20** |
+|        GND | **GPIO21** |
 
-6. Time to add the jumper wires. Start by taking two male-to-male jumper wires and placing one side in a hole next to the outside leg of the left hand button, and the other leg in a hole along the blue strip. Repeat this step with the right hand button.
+Note that if you have an older Raspberry Pi model you'll only have 26 pins but they have the same layout, starting at the top row (`3V3` and `5V` and ending at `GND` and `GPIO7`).
 
-7. Then with a male-to-female jumper wire, connect **GPIO 2** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO 3**.
+1. Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row `A` and one set of legs on row `C`.
 
-8. Using another male-to-female jumper wire, connect **GPIO 11** to a hole on the breadboard in line with the long leg of the LED.
+1. Repeat the last step with the second button, only placing it at the other end of the breadboard on the same row. See the diagram below.
+
+1. Place an LED with the longer leg above the ridge in the breadboard in `H16` and the shorter leg in `G15`. The numbering will depend on your breadboard so make sure that you check the diagram below.
+
+	*LED stands for Light Emitting Diode, and glows when electricity is passed through it. It has one leg longer than the other. This is important as it tells us which way round the LED should be placed into a circuit in order for the current to flow through it and make it work. The longer leg (known as the ‘anode’), is always connected to the positive supply of the circuit. The shorter leg (known as the ‘cathode’) is connected to the negative side of the power supply, known as ‘ground’.*
+
+1. Next push one leg of the resistor into the same column `15` as the short leg of the resistor and the other leg into a hole along the blue strip.
+
+	 *Resistors are a way of limiting the amount of electricity going through a circuit; specifically, they limit the amount of ‘current’ that is allowed to flow.  The measure of resistance is called the Ohm (Ω), and the larger the resistance, the more it limits the current.  The value of a resistor is marked with coloured bands along the length of the resistor body. In this circuit a 330Ω should provide enough resistance so that too much current does not overpower the LED.*
+
+1. Time to add the jumper wires. Start by taking two male-to-male jumper wires and placing one side in a hole next to the outside leg of the left hand button, and the other leg in a hole along the blue strip. Repeat this step with the right hand button.
+
+	*Jumper wires are used on breadboards to ‘jump’ from one connection to another.  The ones you will be using in this circuit have different connectors on each end.  The end with the ‘pin’ will go into the Breadboard.  The end with the piece of plastic with a hole in it will go onto the Raspberry Pi’s GPIO pins.*
+
+1. Then with a male-to-female jumper wire, connect **GPIO2** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO3**.
+
+1. Using another male-to-female jumper wire, connect **GPIO4** to a hole on the breadboard in line with the long leg of the LED.
 
 9. Finally, connect a **GND** GPIO pin to the blue strip on the breadboard with the remaining male-to-female jumper wire.
 
@@ -29,13 +66,15 @@ Before using Python to program the game, you will need to connect the electronic
 
 When programming it makes sense to tackle one problem at a time. This makes it easier to test your project at various stages. In this step you will use a Python library to control the Raspberry Pi GPIO, set the mode of pin numbering that you are going to use, and then write a simple sequence to turn the LED on and off.
 
-1. Open the Python programming environment **IDLE3** by using the main menu, selecting *Programming* and then *Python 3*.
+1. Click on the **Terminal** application icon on the taskbar or click on **Main Menu**, **Accessories** and **Terminal**. 
 
-2. Create a new test editor file by clicking on *File* and *New Window*.
+    Once loaded type `sudo idle3 &` and press enter on the keyboard. This will load the Python 3 programming environment called `IDLE3` as the super user which allows you to create a program that affects the GPIO pins. Once loaded click on **file** and **new window**.
 
-3. Save this file as **reaction.py** by clicking on *File* and *Save As*.
+1. Create a new test editor file by clicking on *File* and *New Window*.
 
-4. First you will need to import the modules and libraries needed to control the GPIO pins on the Raspberry Pi. Type:
+1. Save this file as **reaction.py** by clicking on *File* and *Save As*.
+
+1. First you will need to import the modules and libraries needed to control the GPIO pins on the Raspberry Pi. Type:
 
 	```python
 	import RPi.GPIO as GPIO
