@@ -168,17 +168,18 @@ As with the last step, some code needs to be added to your current program.
 3. Then underneath `GPIO.output(led, 0)` add the button loop that waits until a button has been pressed:
 
 	``` python
-	while GPIO.input(left_button) and GPIO.input(right_button):
-    	    pass
-	if GPIO.input(left_button) == False:
-    	    print("Left button pressed")
-	if GPIO.input(right_button) == False:
-    	    print("Right button pressed")
+	while True:
+    	    if GPIO.input(left_button) == False:
+    	    	print("Left button pressed")
+    	    	break
+	    if GPIO.input(right_button) == False:
+    	        print("Right button pressed")
+    	        break
 	```
 
 	Each time around this loop the Raspberry Pi checks if a button has been pushed; if one has, then a statement is printed to the screen to indicate that it has been pushed.
 
-	Notice that the line after `while` is **indented** (it has spaces at the start). Python knows which lines are in the loop (and also for the `if` blocks) by how far they are indented, so make sure you put the spaces in correctly. The IDLE3 text editor should do much of this for you, but make sure you check it.
+	Notice that the line after `while True:` is **indented** (it has spaces at the start). Python knows which lines are in the loop (and also for the `if` blocks) by how far they are indented, so make sure you put the spaces in correctly. The IDLE3 text editor should do much of this for you, but make sure you check that there are 4 spaces.
 
 4. Save your program and test it with a friend.
 
