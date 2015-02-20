@@ -169,10 +169,10 @@ As with the last step, some code needs to be added to your current program.
 
 	``` python
 	while True:
-    	    if GPIO.input(left_button) == False:
+	    if GPIO.input(left_button) == False:
     	    	print("Left button pressed")
     	    	break
-	    if GPIO.input(right_button) == False:
+    	    if GPIO.input(right_button) == False:
     	        print("Right button pressed")
     	        break
 	```
