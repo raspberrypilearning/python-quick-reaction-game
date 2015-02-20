@@ -1,10 +1,9 @@
 
-
 ## Step 1: Connect the components
 
 Before using Python to program the game, you will need to connect the electronic components on a **breadboard** that has lots of holes in it, allowing you to connect electrical bits together really easily. To help know which pins to connect cables to, it is recommended that you download and print a [Raspberry Leaf](https://github.com/simonmonk/wiki_images/raw/master/raspberry%20leaf%20r2.pdf) diagram and place it over the pins on your Raspberry Pi.
 
-**Activity checklist:**
+*Using a breadboard allows you to connect electronic components to each other without having to solder them together. They are often used to test a circuit design before creating a Printed Circuit Board (PCB). The holes on the breadboard are connected in a pattern. With the breadboard in the CamJam EduKit, the top row of holes are all connected together – marked with red dots.  And so are the second row of holes – marked with blue dots and we call this the ground rail.  The same goes for the two rows of holes at the bottom of the breadboard. In the middle, the columns of wires are connected together with a break in the middle.*
 
 1. Begin by placing all the components on a desk and make sure that you have space to work. Lay the breadboard lengthways (landscape).
 
@@ -30,11 +29,7 @@ Before using Python to program the game, you will need to connect the electronic
 
 When programming it makes sense to tackle one problem at a time. This makes it easier to test your project at various stages. In this step you will use a Python library to control the Raspberry Pi GPIO, set the mode of pin numbering that you are going to use, and then write a simple sequence to turn the LED on and off.
 
-**Activity checklist**
-
-1. Open the Python programming environment **IDLE3** by double-clicking the desktop icon, or by using the main menu, selecting *Programming* and then *IDLE3*.
-
-	![](images/idle3.png "Idle desktop icon")
+1. Open the Python programming environment **IDLE3** by using the main menu, selecting *Programming* and then *Python 3*.
 
 2. Create a new test editor file by clicking on *File* and *New Window*.
 
@@ -83,7 +78,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 11. Save the file by clicking on *File* and *Save*.
 
-12. Finally, test that it works by opening **LXTerminal** by double-clicking the icon on the desktop. Then type `sudo python3 reaction.py`.
+12. Finally, test that it works by opening **LXTerminal** by clicking on **Main Menu**, **Accesories** and **Terminal** Then type `sudo python3 reaction.py`.
 
 If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging*, which is finding errors or bugs in your code and fixing them.
 
@@ -91,8 +86,6 @@ If the LED does not come on for 5 seconds, go back and see if you can work out w
 ## Step 3: Adding an element of surprise
 
 The object of the game is to see who can press the button first when the light goes out, so it would be better if the length of time it stayed on were random. You need to add and amend some lines of code in your Python program so far.
-
-**Activity checklist:**
 
 1. If the file **reaction.py** is not already open in IDLE3 then open it by clicking on *File* and *Open*.
 
@@ -118,8 +111,6 @@ The LED is working; now you want to add functionality to your program so that wh
 One odd thing is that the buttons are on if they are not pressed and off when they are. This is why the code says 'Left button pressed' when it finds that 'leftButton' is 'False'.
 
 As with the last step, some code needs to be added to your current program.
-
-**Activity checklist:**
 
 1. With the file **reaction.py** open add the following variables underneath `led = 23`:
 
@@ -155,8 +146,6 @@ As with the last step, some code needs to be added to your current program.
 ## Step 5: Get player names
 
 Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players' names. In Python you can use **input** for this. In Python 3 use the syntax `input` (which you have been using so far). You could write your code in Python 2, which means that you need to use `raw_input` instead.
-
-**Activity checklist:**
 
 1. 	To find out the names of the players you can use `input` to ask the players to type in their names. Underneath the imported libraries and modules type:
 
