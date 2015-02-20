@@ -54,7 +54,7 @@ Note that if you have an older Raspberry Pi model you'll only have 26 pins but t
 
 	*Jumper wires are used on breadboards to ‘jump’ from one connection to another.  The ones you will be using in this circuit have different connectors on each end.  The end with the ‘pin’ will go into the Breadboard.  The end with the piece of plastic with a hole in it will go onto the Raspberry Pi’s GPIO pins.*
 
-1. Then with a male-to-female jumper wire, connect **GPIO2** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO3**.
+1. Then with a male-to-female jumper wire, connect **GPIO14** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO15**.
 
 1. Using another male-to-female jumper wire, connect **GPIO4** to a hole on the breadboard in line with the long leg of the LED.
 
@@ -154,8 +154,8 @@ As with the last step, some code needs to be added to your current program.
 1. With the file **reaction.py** open add the following variables underneath `led = 4`:
 
 	```python
-	right_button = 3
-	left_button = 2
+	right_button = 15
+	left_button = 14
 	```
 
 2. Next set the buttons as input in the same way that you set the LED as output. Underneath `GPIO.setup(led, GPIO.OUT)` type:
@@ -169,11 +169,11 @@ As with the last step, some code needs to be added to your current program.
 
 	``` python
 	while GPIO.input(left_button) and GPIO.input(right_button):
-    		pass
-		if GPIO.input(left_button) == False:
-    			print("Left button pressed")
-		if GPIO.input(right_button) == False:
-    			print("Right button pressed")
+    	    pass
+	if GPIO.input(left_button) == False:
+    	    print("Left button pressed")
+	if GPIO.input(right_button) == False:
+    	    print("Right button pressed")
 	```
 
 	Each time around this loop the Raspberry Pi checks if a button has been pushed; if one has, then a statement is printed to the screen to indicate that it has been pushed.
