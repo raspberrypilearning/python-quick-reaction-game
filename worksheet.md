@@ -38,11 +38,11 @@ Before using Python to program the game, you will need to connect the electronic
 
 Note that if you have an older Raspberry Pi model you'll only have 26 pins but they have the same layout, starting at the top row (`3V3` and `5V` and ending at `GND` and `GPIO7`).
 
-1. Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row `A` and one set of legs on row `C`.
+1. Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row `H` and one set of legs on row `J`.
 
 1. Repeat the last step with the second button, only placing it at the other end of the breadboard on the same row. See the diagram below.
 
-1. Place an LED with the longer leg above the ridge in the breadboard in `G16` and the shorter leg in `G15`. The numbering will depend on your breadboard so make sure that you check the diagram below.
+1. Place an LED with the longer leg above the ridge in the breadboard in `D16` and the shorter leg in `D15`. The numbering will depend on your breadboard so make sure that you check the diagram below.
 
 	*LED stands for Light Emitting Diode, and glows when electricity is passed through it. It has one leg longer than the other. This is important as it tells us which way round the LED should be placed into a circuit in order for the current to flow through it and make it work. The longer leg (known as the ‘anode’), is always connected to the positive supply of the circuit. The shorter leg (known as the ‘cathode’) is connected to the negative side of the power supply, known as ‘ground’.*
 
