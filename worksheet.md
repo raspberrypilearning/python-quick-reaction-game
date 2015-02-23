@@ -1,6 +1,6 @@
 # Quick Reaction Game
 
-## Step 1: Connect the components
+## Connect the components
 
 Before using Python to program the game, you will need to connect the electronic components on a **breadboard** that has lots of holes in it, allowing you to connect electrical bits together really easily.
 
@@ -63,7 +63,7 @@ Note that if you have an older Raspberry Pi model you'll only have 26 pins but t
 
 	![](images/quick-reaction-circuit.png)
 
-## Step 2: Controlling the light
+## Controlling the light
 
 When programming it makes sense to tackle one problem at a time. This makes it easier to test your project at various stages. In this step you will use a Python library to control the Raspberry Pi GPIO, set the mode of pin numbering that you are going to use, and then write a simple sequence to turn the LED on and off.
 
@@ -123,7 +123,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging*, which is finding errors or bugs in your code and fixing them.
 
 
-## Step 3: Adding an element of surprise
+## Adding an element of surprise
 
 The object of the game is to see who can press the button first when the light goes out, so it would be better if the length of time it stayed on were random. You need to add and amend some lines of code in your Python program so far.
 
@@ -186,7 +186,7 @@ As with the last step, some code needs to be added to your current program.
 
 4. Save your program and test it with a friend.
 
-## Step 5: Get player names
+## Get player names
 
 Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players' names. In Python you can use **input** for this. In Python 3 use the syntax `input` (which you have been using so far). You could write your code in Python 2, which means that you need to use `raw_input` instead.
 
