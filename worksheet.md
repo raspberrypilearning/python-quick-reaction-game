@@ -1,3 +1,4 @@
+# Quick Reaction Game
 
 ## Step 1: Connect the components
 
