@@ -4,7 +4,7 @@
 - name: LED
   img: led
   url: http://shop.pimoroni.com/products/led-10mm-pack-of-5
-- name: Resistor
+- name: 330 ohm Resistor
   img: resistor
   url: http://shop.pimoroni.com/products/resistor-grab-bag
 - name: 4 x male-to-female jumper wires
