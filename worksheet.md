@@ -218,7 +218,7 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 5. 	Save **reaction.py** and test your game to see if it works.
 
-![](images/reaction-game3.png)
+![](images/reaction-game-3.png)
 
 ## What's next?
 
