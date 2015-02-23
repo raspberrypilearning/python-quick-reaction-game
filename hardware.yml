@@ -1,5 +1,5 @@
 - name: Half-size breadboard
-  img: half-size-breadboard
+  img: breadboard
   url: http://shop.pimoroni.com/products/solderless-breadboard-400-point
 - name: LED
   img: led
@@ -7,12 +7,12 @@
 - name: Resistor
   img: resistor
   url: http://shop.pimoroni.com/products/resistor-grab-bag
-- name: 4 x female-to-male jumper wires
-  img: female-to-male-jumper-wires
+- name: 4 x male-to-female jumper wires
+  img: jumper-male-to-female
   url: http://shop.pimoroni.com/products/jumper-jerky
 - name: 2 x male-to-male jumper wires
-  img: male-to-male-jumper-wires
+  img: jumper-male-to-male
   url: http://shop.pimoroni.com/products/jumper-jerky
 - name: 2 x tactile buttons
-  img: tactile-buttons
+  img: tactile-push-button
   url: http://shop.pimoroni.com/products/tactile-switches
