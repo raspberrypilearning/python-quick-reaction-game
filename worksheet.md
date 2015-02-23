@@ -181,6 +181,8 @@ As with the last step, some code needs to be added to your current program.
 
 	Notice that the line after `while True:` is **indented** (it has spaces at the start). Python knows which lines are in the loop (and also for the `if` blocks) by how far they are indented, so make sure you put the spaces in correctly. The IDLE3 text editor should do much of this for you, but make sure you check that there are 4 spaces.
 
+	![](images/reaction-game-1.png)
+
 4. Save your program and test it with a friend.
 
 ## Step 5: Get player names
