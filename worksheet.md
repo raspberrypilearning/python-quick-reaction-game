@@ -86,6 +86,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 	```python
 	GPIO.setmode(GPIO.BCM)
+	GPIO.setwarnings(False)
 	```
 
 1. 	As you are outputting to an LED, you need to set up the pin that the LED connects to on the Raspberry Pi as an output. First use a variable to name the pin and then set the output:
@@ -162,8 +163,8 @@ As with the last step, some code needs to be added to your current program.
 2. Next set the buttons as input in the same way that you set the LED as output. Underneath `GPIO.setup(led, GPIO.OUT)` type:
 	
 	```python
-	GPIO.setup(right_button, GPIO.IN)
-	GPIO.setup(left_button, GPIO.IN)
+	GPIO.setup(right_button, GPIO.IN, GPIO.PUD_UP)
+	GPIO.setup(left_button, GPIO.IN, GPIO.PUD_UP)
 	```
 	
 3. Then underneath `GPIO.output(led, 0)` add the button loop that waits until a button has been pressed:
