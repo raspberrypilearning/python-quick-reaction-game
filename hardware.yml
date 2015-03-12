@@ -1,11 +1,11 @@
-- name: Half-size breadboard
+- name: Breadboard
   img: breadboard
   url: http://shop.pimoroni.com/products/solderless-breadboard-400-point
 - name: LED
   img: led
   url: http://shop.pimoroni.com/products/led-10mm-pack-of-5
 - name: 330 ohm Resistor
-  img: resistor
+  img: resistor-330r
   url: http://shop.pimoroni.com/products/resistor-grab-bag
 - name: 4 x male-to-female jumper wires
   img: jumper-male-to-female
