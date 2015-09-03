@@ -8,7 +8,7 @@ Before using Python to program the game, you will need to connect the electronic
 
 1. Begin by placing all the components on a desk and make sure that you have space to work. Lay the breadboard lengthways (landscape).
 
-1. Looking at the following GPIO diagram, comapre it to your Raspberry Pi. 
+1. Looking at the following GPIO diagram, compare it to your Raspberry Pi. 
 
     *GPIO stands for **General Purpose Input Output**. It is a way in which the Raspberry Pi can control and monitor the outside world by being connected to electronic circuits.  The Pi is able to control LEDs, turning them on or off, or motors, or many other things.  It is also able to detect whether a switch has been pressed, or temperature, or light.*
 
