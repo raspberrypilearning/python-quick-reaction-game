@@ -14,30 +14,30 @@ Using a breadboard allows you to connect electronic components to each other wit
 
     You'll be using a single ground pin (marked `GND`) and several GPIO pins (marked `GPIO`):
 
-|            |            |
-|-----------:|:-----------|
-|    3V3     | 5V         |
-|  **GPIO2** | 5V         |
-|  **GPIO3** | GND        |
-|  **GPIO4** | **GPIO14** |
-|        GND | **GPIO15** |
-| **GPIO17** | **GPIO18** |
-| **GPIO27** | GND        |
-| **GPIO22** | **GPIO23** |
-|        3V3 | **GPIO24** |
-| **GPIO10** | GND        |
-|  **GPIO9** | **GPIO25** |
-| **GPIO11** | **GPIO8**  |
-|        GND | **GPIO7**  |
-|        DNC | DNC        |
-|  **GPIO5** | GND        |
-|  **GPIO6** | **GPIO12** |
-| **GPIO13** | GND        |
-| **GPIO19** | **GPIO16** |
-| **GPIO26** | **GPIO20** |
-|        GND | **GPIO21** |
+	|            |            |
+	|-----------:|:-----------|
+	|    3V3     | 5V         |
+	|  **GPIO2** | 5V         |
+	|  **GPIO3** | GND        |
+	|  **GPIO4** | **GPIO14** |
+	|        GND | **GPIO15** |
+	| **GPIO17** | **GPIO18** |
+	| **GPIO27** | GND        |
+	| **GPIO22** | **GPIO23** |
+	|        3V3 | **GPIO24** |
+	| **GPIO10** | GND        |
+	|  **GPIO9** | **GPIO25** |
+	| **GPIO11** | **GPIO8**  |
+	|        GND | **GPIO7**  |
+	|        DNC | DNC        |
+	|  **GPIO5** | GND        |
+	|  **GPIO6** | **GPIO12** |
+	| **GPIO13** | GND        |
+	| **GPIO19** | **GPIO16** |
+	| **GPIO26** | **GPIO20** |
+	|        GND | **GPIO21** |
 
-Note that if you have an older Raspberry Pi model you'll only have 26 pins but they have the same layout, starting at the top row (`3V3` and `5V` and ending at `GND` and `GPIO7`).
+	Note that if you have an older Raspberry Pi model you'll only have 26 pins but they have the same layout, starting at the top row (`3V3` and `5V` and ending at `GND` and `GPIO7`).
 
 1. Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row `H` and one set of legs on row `J`.
 
