@@ -67,11 +67,9 @@ Using a breadboard allows you to connect electronic components to each other wit
 
 When programming it makes sense to tackle one problem at a time. This makes it easier to test your project at various stages. In this step you will use a Python library to control the Raspberry Pi GPIO, set the mode of pin numbering that you are going to use, and then write a simple sequence to turn the LED on and off.
 
-1. Click on the **Terminal** application icon on the taskbar or click on **Main Menu**, **Accessories** and **Terminal**. 
+1. Click on the  **Main Menu**, **Programming** and **Python 3**. 
 
-    Once loaded type `sudo idle3 &` and press enter on the keyboard. This will load the Python 3 programming environment called `IDLE3` as the super user which allows you to create a program that affects the GPIO pins. Once loaded click on **file** and **new window**.
-
-1. Create a new test editor file by clicking on *File* and *New Window*.
+1. Create a new text editor file by clicking on *File* and *New Window*.
 
 1. Save this file as **reaction.py** by clicking on *File* and *Save As*.
 
