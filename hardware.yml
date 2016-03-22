@@ -1,18 +1,12 @@
 - name: 1 x Breadboard
   img: breadboard
-  url: http://shop.pimoroni.com/products/solderless-breadboard-400-point
 - name: 1 x LED
   img: led
-  url: http://shop.pimoroni.com/products/led-10mm-pack-of-5
 - name: 1 x 330 ohm Resistor
   img: resistor-330r
-  url: http://shop.pimoroni.com/products/resistor-grab-bag
 - name: 4 x Male-to-female jumper wires
   img: jumper-male-to-female
-  url: http://shop.pimoroni.com/products/jumper-jerky
 - name: 2 x Male-to-male jumper wires
   img: jumper-male-to-male
-  url: http://shop.pimoroni.com/products/jumper-jerky
 - name: 2 x Tactile push buttons
   img: tactile-push-button
-  url: http://shop.pimoroni.com/products/tactile-switches
