@@ -142,7 +142,6 @@ The object of the game is to see who can press the button first when the light g
 
 4. Save your work by clicking on *File* and *Save*. Test that it works by pressing `F5`.
 
-
 ## Step 4: Detecting the buttons
 
 The LED is working; now you want to add functionality to your program so that when a button is pressed it is detected. That way you can record the scores of the players to see who wins. The way do this is to have a loop that keeps going until one of the buttons is pressed.
@@ -168,13 +167,13 @@ As with the last step, some code needs to be added to your current program.
 3. Then underneath `GPIO.output(led, 0)` add the button loop that waits until a button has been pressed:
 
 	``` python
-	while True:
-	    if GPIO.input(left_button) == False:
-    	    	print("Left button pressed")
-    	    	break
-    	    if GPIO.input(right_button) == False:
-    	        print("Right button pressed")
-    	        break
+    while True:
+        if GPIO.input(left_button) == False:
+            print("Left button pressed")
+            break
+        if GPIO.input(right_button) == False:
+            print("Right button pressed")
+            break
 	```
 
 	Each time around this loop the Raspberry Pi checks if a button has been pushed; if one has, then a statement is printed to the screen to indicate that it has been pushed.
@@ -204,17 +203,17 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 3. 	Then go down to the button loop and replace `print("Left button pressed")` with `print(names [0] + " won")` like this:
 
-	```python
-	if GPIO.input(left_button) == False:
-	  print(names [0] + " won")
-	```
+    ```python
+    if GPIO.input(left_button) == False:
+        print(names [0] + " won")
+    ```
 
 4. 	Repeat the last step, replacing `print "Right button pressed"` with `print(names [1] + " won")`:
 
-	```python
-	if GPIO.input(right_button) == False:
-	  print(names [1] + " won")
-	```
+    ```python
+    if GPIO.input(right_button) == False:
+        print(names [1] + " won")
+    ```
 
 5. 	Save **reaction.py** and test your game to see if it works.
 
