@@ -68,7 +68,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 1. Finally, test that it works by click on `Run`>`Run Module` or by pressing `F5` on the keyboard.
 
-If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging*, which is finding errors or bugs in your code and fixing them.
+If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging**, which is finding errors or bugs in your code and fixing them.
 
 
 ## Adding an element of surprise
@@ -185,6 +185,6 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 ## What's next?
 
-- Can you put the game into a loop (*you'll need to remove the `exit()`), so that the LED comes on again?
+- Can you put the game into a loop (you'll need to remove the `exit()`), so that the LED comes on again?
 - Can you add scores for both players that accumulate over a number of rounds, and display's the players total scores?
 - How about adding in a timer, to work out how long it took the players to press the button after the LED turned off?
