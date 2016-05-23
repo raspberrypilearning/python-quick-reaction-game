@@ -106,18 +106,18 @@ As with the last step, some code needs to be added to your current program.
 	left_button = Button(14)
 	```
 
-1. Then underneath `led.off()` you can add a function that will be called, whenever a button is pressed:
+1. Then underneath `led.off()` you can add a function that will be called, whenever a button is pressed and tell you which **pin** the button was on:
 
 	``` python
 	def pressed(button):
-		print("{} won the game".format(button))
+	    print(button.pin.number + ' won the game')
 	```
 
 1. To finish off, when either button is pressed, the function will be called. If the `right_button` is pressed, then you can send the string `'right'` to the `pressed` function. If the `left_button` is pressed then you can send the string `'left'`.
 
 	``` python
-	right_button.when_pressed(pressed('right'))
-	left_button.when_pressed(pressed('left'))
+	right_button.when_pressed = pressed
+	left_button.when_pressed = pressed
 	```
 
 Your completed code should now look like this
@@ -136,10 +136,10 @@ sleep(uniform(5, 10))
 led.off()
 
 def pressed(button):
-    print("{} won the gamed".format(button))
+	print(button.pin.number + ' won the game')
 
-right_button.when_pressed(pressed('right'))
-left_button.when_pressed(pressed('left'))
+right_button.when_pressed = pressed
+left_button.when_pressed = pressed
 ```
 
 Save your program and test it with a friend.
@@ -154,16 +154,39 @@ Wouldn't it be better if the program told you who has won instead of just which 
 	left_name = input('left player name is ')
 	right_name = input('right player name is ')
 	```
-1. Now instead of passing a string containing `'right'` or `'left'` to the `pressed` function, you can pass the name of the player. Change the last two lines of your program to the following.
+1. Now you can rewrite your pressed function, so that it can print out the name of the player who won.
 
-right_button.when_pressed(pressed(left_name))
-left_button.when_pressed(pressed(right_name))
+	``` python
+	def pressed(button):
+		if button.pin.number == 14:
+			print(left_name + ' won the game')
+		else:
+			print(right_name + ' won the game')
+	```
 
-5. 	Save **reaction.py** and test your game to see if it works.
+1. 	Save **reaction.py** and test your game to see if it works.
+
+1. You might notice, that the game doesn't quit when the button has been pushed. This can be fixed by adding an exit into the `pressed` function. First, add the following line to your imports.
+
+	``` python
+	from sys import exit
+	```
+
+1. Then you can call `exit()` within your `pressed` function, once the prints have been completed.
+
+	``` python
+	def pressed(button):
+		if button.pin.number == 14:
+			print(left_name + ' won the game')
+		else:
+			print(right_name + ' won the game')
+	```
 
 ## What's next?
 
-- Add scores for both players that accumulate over a number of rounds.
+- Can you put the game into a loop (*you'll need to remove the `exit()`), so that the LED comes on again?
+- Can you add scores for both players that accumulate over a number of rounds, and display's the players total scores?
+- How about adding in a timer, to work out how long it took the players to press the button after the LED turned off?
 
 ## Community
 
