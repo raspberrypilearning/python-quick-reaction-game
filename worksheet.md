@@ -180,6 +180,7 @@ Wouldn't it be better if the program told you who has won instead of just which 
 			print(left_name + ' won the game')
 		else:
 			print(right_name + ' won the game')
+		exit()
 	```
 
 ## What's next?
@@ -187,7 +188,3 @@ Wouldn't it be better if the program told you who has won instead of just which 
 - Can you put the game into a loop (*you'll need to remove the `exit()`), so that the LED comes on again?
 - Can you add scores for both players that accumulate over a number of rounds, and display's the players total scores?
 - How about adding in a timer, to work out how long it took the players to press the button after the LED turned off?
-
-## Community
-
-This activity is based on the work of [Joseph Haig at his Code Club](https://github.com/jrmhaig/rpi_projects).
