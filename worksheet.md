@@ -68,7 +68,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 1. Finally, test that it works by click on `Run`>`Run Module` or by pressing `F5` on the keyboard.
 
-If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging*, which is finding errors or bugs in your code and fixing them.
+If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging**, which is finding errors or bugs in your code and fixing them.
 
 
 ## Adding an element of surprise
