@@ -82,7 +82,7 @@ The object of the game is to see who can press the button first when the light g
 	```python
 	from random import uniform
 	```
-    `uniform` allows for the random selection of a decimal (floating point) number from a range of numbers.
+    Here, `uniform` allows for the random selection of a decimal (floating point) number from a range of numbers.
 	
 1. Then locate the line `sleep(5)` and amend it so that it reads:
 
@@ -92,9 +92,9 @@ The object of the game is to see who can press the button first when the light g
 
 1. Save your work by clicking on **File** and **Save**. Test that everything works by pressing `F5` to run your code.
 
-## Step 4: Detecting the buttons
+## Detecting the buttons
 
-The LED is working; now you want to add functionality to your program so that when a button is pressed it is detected. That way you can record the scores of the players to see who wins.
+The LED is working; now you want to add functionality to your program so that when a button is pressed it is detected. That way you can record the players' scores to see who wins.
 
 As with the last step, some code needs to be added to your current program.
 
@@ -106,14 +106,14 @@ As with the last step, some code needs to be added to your current program.
 	left_button = Button(14)
 	```
 
-1. Then underneath `led.off()` you can add a function that will be called, whenever a button is pressed and tell you which **pin** the button was on:
+1. Then underneath `led.off()` you can add a function that will be called whenever a button is pressed, which will tell you which **pin** the button was on:
 
 	``` python
 	def pressed(button):
 	    print(button.pin.number + ' won the game')
 	```
 
-1. To finish off, when either button is pressed, the function will be called. If the `right_button` is pressed, then you can send the string `'right'` to the `pressed` function. If the `left_button` is pressed then you can send the string `'left'`.
+1. To finish off, when either button is pressed, the function will be called. If the `right_button` is pressed, then you can send the string `'right'` to the `pressed` function. If the `left_button` is pressed, then you can send the string `'left'`.
 
 	``` python
 	right_button.when_pressed = pressed
@@ -146,9 +146,9 @@ Save your program and test it with a friend.
 
 ## Get player names
 
-Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players' names. In Python you can use **input** for this.
+Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players' names. In Python, you can use **input** for this.
 
-1. 	To find out the names of the players you can use `input` to ask the players to type in their names. Underneath the imported libraries and modules type:
+1. To find out the names of the players you can use `input` to ask the players to type in their names. Underneath the imported libraries and modules, type:
 
 	```python
 	left_name = input('left player name is ')
@@ -166,7 +166,7 @@ Wouldn't it be better if the program told you who has won instead of just which 
 
 1. 	Save **reaction.py** and test your game to see if it works.
 
-1. You might notice, that the game doesn't quit when the button has been pushed. This can be fixed by adding an exit into the `pressed` function. First, add the following line to your imports.
+1. You might notice that the game doesn't quit when the button has been pushed. This can be fixed by adding an exit into the `pressed` function. First, add the following line to your imports.
 
 	``` python
 	from sys import exit
@@ -183,7 +183,7 @@ Wouldn't it be better if the program told you who has won instead of just which 
 		exit()
 	```
 
-## What's next?
+## What next?
 
 - Can you put the game into a loop (you'll need to remove the `exit()`), so that the LED comes on again?
 - Can you add scores for both players that accumulate over a number of rounds, and display's the players total scores?
