@@ -90,7 +90,7 @@ The object of the game is to see who can press the button first when the light g
 	sleep(uniform(5, 10))
 	```
 
-1. Save your work by clicking on *File* and *Save*. Test that it works by pressing `F5`.
+1. Save your work by clicking on **File** and **Save**. Test that everything works by pressing `F5` to run your code.
 
 ## Step 4: Detecting the buttons
 
