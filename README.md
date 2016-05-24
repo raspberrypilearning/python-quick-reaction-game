@@ -8,7 +8,7 @@ This project gives you the opportunity to use electronics to create a quick reac
 
 - [Worksheet](worksheet.md)
 
-This activity is based on the work of [Joseph Haig at his Code Club](https://github.com/jrmhaig/rpi_projects).
+This activity is based on the work of Joseph Haig at [his Code Club](https://github.com/jrmhaig/rpi_projects).
 
 ## Licence
 
