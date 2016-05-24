@@ -4,19 +4,19 @@ In this resource, you're going to make a quick reaction game, using a few electr
 
 ## Building the circuit
 
-This is the circuit you are going to build, consisting of two Push-To-Make buttons and an LED.
+This is the circuit you are going to build, consisting of two push-to-make buttons and an LED.
 
 ![](images/quick-reaction-circuit.png)
 
 1. Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row `H` and one set of legs on row `J`.
 
-1. Repeat the last step with the second button, only placing it at the other end of the breadboard on the same row.
+1. Repeat the last step with the second button, placing it at the other end of the breadboard on the same row.
 
 1. Place an LED with the longer leg above the ridge in the breadboard in `D16` and the shorter leg in `D15`. The numbering will depend on your breadboard so make sure that you check the diagram below.
 
 1. Next push one leg of the resistor into the same column `15` as the short leg of the resistor and the other leg into a hole along the blue strip.
 
-1. Time to add the jumper wires. Start by taking two male-to-male jumper wires and placing one side in a hole next to the outside leg of the left hand button, and the other leg in a hole along the blue strip. Repeat this step with the right hand button.
+1. Now it's time to add the jumper wires. Start by taking two male-to-male jumper wires and placing one end in a hole next to the outside leg of the left hand button, and the other end in a hole along the blue strip. Repeat this step with the right hand button.
 
 1. Then with a male-to-female jumper wire, connect **GPIO14** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO15**.
 
@@ -26,7 +26,7 @@ This is the circuit you are going to build, consisting of two Push-To-Make butto
 
 ## Controlling the light
 
-When programming it makes sense to tackle one problem at a time. This makes it easier to test your project at various stages.
+When programming, it makes sense to tackle one problem at a time. This makes it easier to test your project at various stages.
 
 1. Click on the  `Menu`>`Programming`>`Python 3 (IDLE)`
 
@@ -41,7 +41,7 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 	from time import sleep
 	```
 
-1. 	As you are outputting to an LED, you need to set up the pin that the LED connects to on the Raspberry Pi as an output. First use a variable to name the pin and then set the output:
+1. As you are outputting to an LED, you need to set up the pin that the LED connects to on the Raspberry Pi as an output. First use a variable to name the pin and then set the output:
 
 	```python
 	led = LED(4)
@@ -68,14 +68,14 @@ When programming it makes sense to tackle one problem at a time. This makes it e
 
 1. Finally, test that it works by click on `Run`>`Run Module` or by pressing `F5` on the keyboard.
 
-If the LED does not come on for 5 seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging**, which is finding errors or bugs in your code and fixing them.
+If the LED does not come on for five seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging**, which means finding and fixing errors or bugs in your code.
 
 
 ## Adding an element of surprise
 
-The object of the game is to see who can press the button first when the light goes out, so it would be better if the length of time it stayed on were random. You need to add and amend some lines of code in your Python program so far.
+The object of the game is to see who can press the button first when the light goes out, so it would be better if the length of time it stayed on were random. You need to add and amend some lines of code in your Python program to make this happen.
 
-1. If the file **reaction.py** is not already open in IDLE3 then open it by clicking on *File* and *Open*.
+1. If the file **reaction.py** is not already open in IDLE3 then open it by clicking on **File** and **Open**.
 
 1. Underneath `from time import sleep` add the following line:
 
