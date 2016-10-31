@@ -110,7 +110,7 @@ As with the last step, some code needs to be added to your current program.
 
 	``` python
 	def pressed(button):
-	    print(button.pin.number + ' won the game')
+	    print(str(button.pin.number) + ' won the game')
 	```
 
 1. To finish off, when either button is pressed, the function will be called. If the `right_button` is pressed, then you can send the string `'right'` to the `pressed` function. If the `left_button` is pressed, then you can send the string `'left'`.
@@ -136,7 +136,7 @@ sleep(uniform(5, 10))
 led.off()
 
 def pressed(button):
-	print(button.pin.number + ' won the game')
+	print(str(button.pin.number) + ' won the game')
 
 right_button.when_pressed = pressed
 left_button.when_pressed = pressed
