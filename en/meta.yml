@@ -1,0 +1,25 @@
+---
+title: Python Quick Reaction Game
+hero_image: images/banner.png
+description: Make a quick reaction game to play with your friends
+original_url: https://raspberrypi.org/learning/python-quick-reaction-game
+theme: red
+duration: 2
+listed: false
+ingredient: false
+copyedit: true
+curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: rpi, physical computing, python
+site_areas: ''
+steps:
+- title: Introduction
+- title: What you will need
+- title: Quick Reaction Game
+- title: Building the circuit
+- title: Controlling the light
+- title: Adding an element of surprise
+- title: Detecting the buttons
+- title: Get player names
+- title: What next?
+
