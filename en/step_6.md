@@ -1,21 +1,39 @@
-## Adding an element of surprise
+## Get player names
 
-The object of the game is to see who can press the button first when the light goes out, so it would be better if the length of time it stayed on were random. You need to add and amend some lines of code in your Python program to make this happen.
+Wouldn't it be better if the program told you who has won instead of just which button was pressed? For this, you need to find out the players' names. In Python, you can use **input** for this.
 
-- If the file **reaction.py** is not already open in IDLE3 then open it by clicking on **File** and **Open**.
-
-- Underneath `from time import sleep` add the following line:
+- To find out the names of the players you can use `input` to ask the players to type in their names. Underneath the imported libraries and modules, type:
 
 	```python
-	from random import uniform
+	left_name = input('left player name is ')
+	right_name = input('right player name is ')
 	```
-    Here, `uniform` allows for the random selection of a decimal (floating point) number from a range of numbers.
-	
-- Then locate the line `sleep(5)` and amend it so that it reads:
+- Now you can rewrite your pressed function, so that it can print out the name of the player who won.
 
-	```python
-	sleep(uniform(5, 10))
+	``` python
+	def pressed(button):
+		if button.pin.number == 14:
+			print(left_name + ' won the game')
+		else:
+			print(right_name + ' won the game')
 	```
 
-- Save your work by clicking on **File** and **Save**. Test that everything works by pressing `F5` to run your code.
+- 	Save **reaction.py** and test your game to see if it works.
+
+- You might notice that the game doesn't quit when the button has been pushed. This can be fixed by adding an exit into the `pressed` function. First, add the following line to your imports.
+
+	``` python
+	from sys import exit
+	```
+
+- Then you can call `exit()` within your `pressed` function, once the prints have been completed.
+
+	``` python
+	def pressed(button):
+		if button.pin.number == 14:
+			print(left_name + ' won the game')
+		else:
+			print(right_name + ' won the game')
+		exit()
+	```
 
