@@ -48,7 +48,6 @@ led.on()
 sleep(uniform(5, 10))
 led.off()
 --- /code ---
-
 --- /task ---
 
 --- task ---
