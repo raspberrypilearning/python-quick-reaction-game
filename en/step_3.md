@@ -53,8 +53,8 @@ Next add a few lines to turn the LED on, wait for 5 seconds and then turn the LE
 language: python
 filename: reaction.py
 line_numbers: true
-line_number_start: 
-highlight_lines:
+line_number_start: 1
+highlight_lines: 6-8
 ---
 from gpiozero import LED, Button
 from time import sleep
