@@ -29,7 +29,6 @@ Here, `uniform` allows for the random selection of a decimal (floating point) nu
 
 --- task ---
 Then locate the line `sleep(5)` and amend it so that it reads:
-
 --- code ---
 ---
 language: python
