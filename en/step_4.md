@@ -1,22 +1,56 @@
-## Building the circuit
+## Adding an element of surprise
 
-This is the circuit you are going to build, consisting of two push-to-make buttons and an LED.
+The object of the game is to see who can press the button first when the light goes out, so it would be better if the length of time it stayed on were random. You need to add and amend some lines of code in your Python program to make this happen.
 
-![](images/quick-reaction-circuit.png)
+--- task ---
+Underneath `from time import sleep` add a line to import `uniform`
 
-- Take one of your tactile buttons and push it into the holes on your breadboard, with one set of legs on row **H** and one set of legs on row **J**.
+--- code ---
+---
+language: python
+filename: reaction.py
+line_numbers: true
+line_number_start: 1
+highlight_lines: 3
+---
+from gpiozero import LED, Button
+from time import sleep
+from random import uniform
 
-- Repeat the last step with the second button, placing it at the other end of the breadboard on the same row.
+led = LED(4)
 
-- Place an LED with the longer leg above the ridge in the breadboard in **D16** and the shorter leg in **D15**. The numbering will depend on your breadboard so make sure that you check the diagram below.
+led.on()
+sleep(5)
+led.off()
+--- /code ---
 
-- Next push one leg of the resistor into the same column (**15**) as the short leg of the resistor and the other leg into a hole along the blue strip.
+Here, `uniform` allows for the random selection of a decimal (floating point) number from a range of numbers.
+--- /task ---
 
-- Now it's time to add the jumper wires. Start by taking two male-to-male jumper wires and placing one end in a hole next to the outside leg of the left hand button, and the other end in a hole along the blue strip. Repeat this step with the right hand button.
+--- task ---
+Then locate the line `sleep(5)` and amend it so that it reads:
 
-- Then with a male-to-female jumper wire, connect **GPIO14** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO15**.
+--- code ---
+---
+language: python
+filename: reaction.py
+line_numbers: true
+line_number_start: 1
+highlight_lines: 8
+---
+from gpiozero import LED, Button
+from time import sleep
+from random import uniform
 
-- Using another male-to-female jumper wire, connect **GPIO4** to a hole on the breadboard in line with the long leg of the LED.
+led = LED(4)
 
-- Finally, connect a **GND** GPIO pin to the blue strip on the breadboard with the remaining male-to-female jumper wire.
+led.on()
+sleep(uniform(5, 10))
+led.off()
+--- /code ---
+--- /task ---
+
+--- task ---
+Save your work by clicking on **Save**. Test that everything works by clicking on **Run**
+--- /task ---
 

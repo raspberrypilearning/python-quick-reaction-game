@@ -1,47 +1,101 @@
-## Controlling the light
+## Detecting the buttons
 
-When programming, it makes sense to tackle one problem at a time. This makes it easier to test your project at various stages.
+The LED is working; now you want to add functionality to your program so that when a button is pressed it is detected. That way you can record the players' scores to see who wins.
 
-- Click on the  `Menu`>`Programming`>`Python 3 (IDLE)`
+As with the last step, some code needs to be added to your current program.
 
-- Create a new text editor file by clicking on `File`>`New File`
+--- task ---
+With the file **reaction.py** open add the following variables underneath `led = LED(4)`:
 
-- Save this file as **reaction.py** by clicking on `File`>`Save As`
+--- code ---
+---
+language: python
+filename: reaction.py
+line_numbers: true
+line_number_start: 1
+highlight_lines: 6-7
+---
+from gpiozero import LED, Button
+from time import sleep
+from random import uniform
 
-- First you will need to import the modules and libraries needed to control the GPIO pins on the Raspberry Pi. Type:
+led = LED(4)
+right_button = Button(15)
+left_button = Button(14)
 
-	```python
-	from gpiozero import LED, Button
-	from time import sleep
-	```
+led.on()
+sleep(uniform(5, 10))
+led.off()
+--- /code ---
 
-- As you are outputting to an LED, you need to set up the pin that the LED connects to on the Raspberry Pi as an output. First use a variable to name the pin and then set the output:
+--- /task ---
 
-	```python
-	led = LED(4)
-	```
-	
-- Next add a line to turn the LED on:
+--- task ---
+Then underneath `led.off()` you can add a function that will be called whenever a button is pressed, which will tell you which **pin** the button was on:
 
-	```python
-	led.on()
-	```
-	
-- Now add a line to wait 5 seconds by typing:
+--- code ---
+---
+language: python
+filename: reaction.py
+line_numbers: true
+line_number_start: 1
+highlight_lines: 14-15
+---
+from gpiozero import LED, Button
+from time import sleep
+from random import uniform
 
-	```python
-	sleep(5)
-	```
+led = LED(4)
+right_button = Button(15)
+left_button = Button(14)
 
-- Then add a line to turn the LED off like this:
+led.on()
+sleep(uniform(5, 10))
+led.off()
 
-	```python
-	led.off()
-	```
-- Save the file by clicking on `File`>`Save`.
 
-- Finally, test that it works by click on `Run`>`Run Module` or by pressing `F5` on the keyboard.
+def pressed(button):
+	print(str(button.pin.number) + ' won the game')
+--- /code ---
 
-If the LED does not come on for five seconds, go back and see if you can work out what went wrong. This is a very important skill in computing called **debugging**, which means finding and fixing errors or bugs in your code.
+--- /task ---
+
+--- task ---
+To finish off, when either button is pressed, the function will be called. If the `right_button` is pressed, then you can send the string `'right'` to the `pressed` function. If the `left_button` is pressed, then you can send the string `'left'`.
+
+--- code ---
+---
+language: python
+filename: reaction.py
+line_numbers: true
+line_number_start: 1
+highlight_lines: 18-19
+---
+from gpiozero import LED, Button
+from time import sleep
+from random import uniform
+
+led = LED(4)
+right_button = Button(15)
+left_button = Button(14)
+
+led.on()
+sleep(uniform(5, 10))
+led.off()
+
+
+def pressed(button):
+	print(str(button.pin.number) + ' won the game')
+
+
+right_button.when_pressed = pressed
+left_button.when_pressed = pressed
+--- /code ---
+
+--- /task ---
+
+--- task ---
+Save your program and test it with a friend.
+--- /task ---
 
 
