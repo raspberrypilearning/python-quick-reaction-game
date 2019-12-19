@@ -53,7 +53,7 @@ language: python
 filename: reaction.py
 line_numbers: true
 line_number_start: 
-highlight_lines: 6-8
+highlight_lines: 6,7,8
 ---
 from gpiozero import LED, Button
 from time import sleep
