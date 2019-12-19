@@ -6,6 +6,7 @@ As with the last step, some code needs to be added to your current program.
 
 --- task ---
 With the file **reaction.py** open add the following variables underneath `led = LED(4)`:
+
 --- code ---
 ---
 language: python
@@ -26,6 +27,7 @@ led.on()
 sleep(uniform(5, 10))
 led.off()
 --- /code ---
+
 --- /task ---
 
 --- task ---
@@ -55,6 +57,7 @@ led.off()
 def pressed(button):
 	print(str(button.pin.number) + ' won the game')
 --- /code ---
+
 --- /task ---
 
 --- task ---
@@ -88,7 +91,6 @@ def pressed(button):
 right_button.when_pressed = pressed
 left_button.when_pressed = pressed
 --- /code ---
-
 
 --- /task ---
 
