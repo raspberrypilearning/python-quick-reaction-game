@@ -10,7 +10,7 @@ Underneath `from time import sleep` add a line to import `uniform`
 language: python
 filename: reaction.py
 line_numbers: true
-line_number_start: 
+line_number_start: 1
 highlight_lines: 3
 ---
 from gpiozero import LED, Button
@@ -34,7 +34,7 @@ Then locate the line `sleep(5)` and amend it so that it reads:
 language: python
 filename: reaction.py
 line_numbers: true
-line_number_start: 
+line_number_start: 1
 highlight_lines: 8
 ---
 from gpiozero import LED, Button

@@ -11,7 +11,7 @@ With the file **reaction.py** open add the following variables underneath `led =
 language: python
 filename: reaction.py
 line_numbers: true
-line_number_start: 
+line_number_start: 1
 highlight_lines: 6-7
 ---
 from gpiozero import LED, Button
@@ -36,7 +36,7 @@ Then underneath `led.off()` you can add a function that will be called whenever 
 language: python
 filename: reaction.py
 line_numbers: true
-line_number_start: 
+line_number_start: 1
 highlight_lines: 14-15
 ---
 from gpiozero import LED, Button
@@ -65,7 +65,7 @@ To finish off, when either button is pressed, the function will be called. If th
 language: python
 filename: reaction.py
 line_numbers: true
-line_number_start: 
+line_number_start: 1
 highlight_lines: 18-19
 ---
 from gpiozero import LED, Button
