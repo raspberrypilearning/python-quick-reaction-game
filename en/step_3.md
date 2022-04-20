@@ -3,7 +3,7 @@
 When programming, it makes sense to tackle one problem at a time. This makes it easier to test your project at various stages.
 
 --- task ---
-Click on the  `Menu`>`Programming`>`Mu`
+Click on the  `Menu`>`Programming`>`Thonny`
 --- /task ---
 
 --- task ---
