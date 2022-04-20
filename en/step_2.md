@@ -21,18 +21,18 @@ Next push one leg of the resistor into the same column (**15**) as the short leg
 --- /task ---
 
 --- task ---
-Now it's time to add the jumper wires. Start by taking two male-to-male jumper wires and placing one end in a hole next to the outside leg of the left hand button, and the other end in a hole along the blue strip. Repeat this step with the right hand button.
+Now it's time to add the jumper wires. Start by taking two pin-to-pin jumper wires and placing one end in a hole next to the outside leg of the left hand button, and the other end in a hole along the blue strip. Repeat this step with the right hand button.
 --- /task ---
 
 --- task ---
-Then with a male-to-female jumper wire, connect **GPIO14** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO15**.
+Then with a pin-to-socket jumper wire, connect **GPIO14** to a hole on the breadboard in line with the other leg of the left hand button. Repeat this step for the right hand button, only this time connecting it to **GPIO15**.
 --- /task ---
 
 --- task ---
-Using another male-to-female jumper wire, connect **GPIO4** to a hole on the breadboard in line with the long leg of the LED.
+Using another pin-to-socket jumper wire, connect **GPIO4** to a hole on the breadboard in line with the long leg of the LED.
 --- /task ---
 
 --- task ---
-Finally, connect a **GND** GPIO pin to the blue strip on the breadboard with the remaining male-to-female jumper wire.
+Finally, connect a **GND** GPIO pin to the blue strip on the breadboard with the remaining pin-to-socket jumper wire.
 --- /task ---
 
