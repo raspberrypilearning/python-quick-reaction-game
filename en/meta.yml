@@ -16,11 +16,15 @@ hardware: electronic-components
 software: python
 version: 3
 last_tested: 2017-01-01
-steps: 
+steps:
 - title: Introduction
 - title: Building the circuit
 - title: Controlling the light
+  completion:
+  - engaged
 - title: Adding an element of surprise
 - title: Detecting the buttons
 - title: Get player names
+  completion:
+  - internal
 - title: What next?
