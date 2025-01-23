@@ -28,3 +28,5 @@ steps:
   completion:
   - internal
 - title: What next?
+  completion:
+  - external
