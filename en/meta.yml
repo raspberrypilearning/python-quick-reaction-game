@@ -27,6 +27,5 @@ steps:
 - title: Get player names
   completion:
   - internal
-- title: What next?
   completion:
   - external
